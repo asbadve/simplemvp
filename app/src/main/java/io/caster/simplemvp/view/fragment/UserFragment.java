@@ -13,9 +13,6 @@ import android.widget.Toast;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 import io.caster.simplemvp.MvpApplication;
 import io.caster.simplemvp.R;
 import io.caster.simplemvp.presentation.UserPresenter;
@@ -26,7 +23,8 @@ import io.caster.simplemvp.view.UserView;
  */
 public class UserFragment extends Fragment implements UserView {
 
-    @Inject UserPresenter userPresenter;
+    @Inject
+    UserPresenter userPresenter;
 
     protected EditText userFirstName;
     protected EditText userLastName;
@@ -39,7 +37,7 @@ public class UserFragment extends Fragment implements UserView {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ((MvpApplication)getActivity().getApplication()).getComponent().inject(this);
+        ((MvpApplication) getActivity().getApplication()).getComponent().inject(this);
     }
 
     @Override
